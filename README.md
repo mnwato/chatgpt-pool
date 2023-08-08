@@ -23,7 +23,7 @@
     <thead>
     <tr>
         <th></th>
-        <th>url</th>
+        <th>Url</th>
         <th>Service name</th>
         <th>Supported models</th>
     </tr>
@@ -33,7 +33,7 @@
             <td>1</td>
             <td> <a href="https://chat.openai.com" target="_blank">https://chat.openai.com</a>
                 <br> </td>
-            <td>gpt_go</td>
+            <td>openai</td>
             <td>
                 <details>
                     <summary>Click to expand</summary>
