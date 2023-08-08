@@ -1,6 +1,6 @@
 import time
 
-from token_counter import num_tokens_from_messages
+from src.chatgpt_services.openai.token_counter import num_tokens_from_messages
 	
 
 def check_rpm_limit(rpm_limit, tpm_limit, start_time):
