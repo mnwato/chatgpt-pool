@@ -18,13 +18,16 @@ class ChatGPTPool:
         }
     
 
-    def find_availabe_service(self, prompt):
+    def find_first_availabe_service(self, prompt):
         """
             Find first available service which respons to prompt
         """
         available_service_name = None
         for k,v in self.services.items():
-            service_result = v.make_request(prompt)
+            try:
+                service_result = v.make_request(prompt)
+            except:
+                continue
             if service_result!=None:
                 available_service_name = k
                 return available_service_name
@@ -48,24 +51,11 @@ class ChatGPTPool:
             raise ServiceNotFoundError(service_name)
 
 
-    def req_to_pool(self, prompt, service_name=None):
-        """
-            params:
-                prompt: user prompt
-                service_name: Preferred service name. Default is `None` means finding available chatgpt service to request
-        """
-        if service_name==None:
-            available_service_name = self.find_availabe_service(prompt)
-            result = self.req_to_service(prompt, available_service_name)
-        else:
-            result = self.req_to_service(prompt, service_name)
-        return result
-
-
 
 if __name__ == "__main__":
     obj = ChatGPTPool()
 
     prompt = "Hi"
-    result = obj.req_to_pool(prompt)
+    service_name = "gpt_go"
+    result = obj.req_to_service(prompt, service_name)
     print(result)
