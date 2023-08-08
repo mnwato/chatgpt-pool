@@ -91,7 +91,7 @@ class EasyGptChatgpt:
 
 
 
-	def get_response(self, prompt):
+	def make_request(self, prompt):
 		body = self.create_body(prompt)
 		result = self.chat(body)
 		if result:
