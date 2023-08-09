@@ -16,13 +16,11 @@ from src.utils.env_getter import EnvGetter
 
 
 class OfficialOpenai:
-	def __init__(self) -> None:
-		api_key = ""
-		openai.organization = ""
-		openai.api_key = api_key
-		self.prefered_model = "gpt-3.5-turbo-0301"
+	def __init__(self, model_name) -> None:
+		envs = EnvGetter().env_variables
+		openai.api_key = envs["OPENAI_API_KEY"]
+		openai.organization = envs["OPENAI_ORG_KEY"]
 		self.prefered_model = "gpt-3.5-turbo"
-		self.models = openai.Model.list()
 
 
 
