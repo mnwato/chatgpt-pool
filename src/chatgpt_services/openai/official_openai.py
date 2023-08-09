@@ -10,6 +10,7 @@ path = pathlib.Path(__file__).parent.parent.parent.parent
 sys.path.append(str(path))
 
 from src.chatgpt_services.openai.utils import check_input_tokens_limit, check_rpm_limit
+from src.utils.env_getter import EnvGetter
 
 
 
@@ -36,7 +37,7 @@ class OfficialOpenai:
 
 
 	# @retry(tries=2, delay=5)
-	def get_response(self, prompt):
+	def make_request(self, prompt):
 		start_time = time.time()
 		tpm_limit = 0
 		rpm_limit = 0
