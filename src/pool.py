@@ -9,9 +9,7 @@ path = pathlib.Path(__file__).parent.parent
 sys.path.append(str(path))
 
 
-from src.chatgpt_services.openai.official_openai import OfficialOpenai
-from src.chatgpt_services.gptgo import GPTGoChatgpt
-from src.chatgpt_services.easy_gpt import EasyGptChatgpt
+from src.services import InstantiateServices
 from src.utils.exceptions import ServiceNotFoundError
 from src.utils.exceptions import NoAvailableServiceError
 
@@ -19,20 +17,8 @@ from src.utils.exceptions import NoAvailableServiceError
 
 class ChatGPTPool:
     def __init__(self) -> None:
-        self.rootpath = pathlib.Path(__file__).parent.parent
-        configs = self._load_config_file()
-        self.services = {
-            "openai": OfficialOpenai(configs),
-            "gpt_go": GPTGoChatgpt(),
-            "easy_gpt": EasyGptChatgpt()
-        }
-    
-    
-    def _load_config_file(self):
-        path = os.path.join(self.rootpath, "model_configs.json")
-        with open(path) as f:
-            configs = json.load(f)
-        return configs
+        self.services = InstantiateServices().services
+
 
     def find_first_availabe_service(self, prompt):
         """
