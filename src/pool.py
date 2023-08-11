@@ -1,9 +1,10 @@
-import typing
+import pathlib
+import json
+import os
 
 from chatgpt_services.openai.official_openai import OfficialOpenai
 from chatgpt_services.gptgo import GPTGoChatgpt
 from chatgpt_services.easy_gpt import EasyGptChatgpt
-
 from utils.exceptions import ServiceNotFoundError
 from utils.exceptions import NoAvailableServiceError
 
@@ -11,12 +12,20 @@ from utils.exceptions import NoAvailableServiceError
 
 class ChatGPTPool:
     def __init__(self) -> None:
+        self.rootpath = pathlib.Path(__file__).parent.parent
+        configs = self._load_config_file()
         self.services = {
-            "openai": OfficialOpenai(),
+            "openai": OfficialOpenai(configs),
             "gpt_go": GPTGoChatgpt(),
             "easy_gpt": EasyGptChatgpt()
         }
     
+    
+    def _load_config_file(self):
+        path = os.path.join(self.rootpath, "model_configs.json")
+        with open(path) as f:
+            configs = json.load(f)
+        return configs
 
     def find_first_availabe_service(self, prompt):
         """
@@ -33,7 +42,7 @@ class ChatGPTPool:
                 return available_service_name
         
         if available_service_name==None:
-            raise NoAvailableServiceError() 
+            raise NoAvailableServiceError()
     
 
     def req_to_service(self, prompt, service_name):
