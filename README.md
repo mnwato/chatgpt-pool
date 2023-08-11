@@ -1,6 +1,4 @@
-# ChatGPT Pool: Your Text Annotator assistant
-
-# chatgpt-pool
+# **chatgpt-pool**: Free and easy access to ChatGPT
 **ChatGPT Pool** is a pool of ChatGPT (official and free) reverse proxy services.
 - The idea for this package arises from a text annotation task that requires thousands of requests.
 - The goal is to have a pool of ChatGPT instances to decrease the probability of getting blocked.
