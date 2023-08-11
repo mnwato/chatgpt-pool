@@ -1,12 +1,19 @@
 import pathlib
 import json
 import os
+import sys
+import pathlib
 
-from chatgpt_services.openai.official_openai import OfficialOpenai
-from chatgpt_services.gptgo import GPTGoChatgpt
-from chatgpt_services.easy_gpt import EasyGptChatgpt
-from utils.exceptions import ServiceNotFoundError
-from utils.exceptions import NoAvailableServiceError
+
+path = pathlib.Path(__file__).parent.parent
+sys.path.append(str(path))
+
+
+from src.chatgpt_services.openai.official_openai import OfficialOpenai
+from src.chatgpt_services.gptgo import GPTGoChatgpt
+from src.chatgpt_services.easy_gpt import EasyGptChatgpt
+from src.utils.exceptions import ServiceNotFoundError
+from src.utils.exceptions import NoAvailableServiceError
 
 
 

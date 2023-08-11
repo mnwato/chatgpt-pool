@@ -1,12 +1,7 @@
 
 import openai
 import time
-import sys
-import pathlib
 
-
-path = pathlib.Path(__file__).parent.parent.parent.parent
-sys.path.append(str(path))
 
 from src.chatgpt_services.openai.utils import check_input_tokens_limit, check_rpm_limit
 
