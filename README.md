@@ -83,7 +83,7 @@
             "OPENAI_ORG_KEY": "YOUR_OPENAI_ORG_KEY",
             "OPENAI_Model_Name": "gpt-3.5-turbo"
         }
-2. There are example codes in root:
+2. There are example codes in root: 
     - You can use your prefered service name to request ChatGPT:
         `/example/single_service.py`
     - Find available service:   
