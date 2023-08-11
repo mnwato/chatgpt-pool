@@ -4,7 +4,6 @@
 
 
 
-from retry import retry
 import requests
 import json
 
@@ -66,7 +65,6 @@ class EasyGptChatgpt:
 		return body
 
 
-	# @retry(tries=2, delay=5)
 	def chat(self, body):
 		try:
 			res = self.s.post(self.easy_gpt.chat_url, json=body, headers=self.easy_gpt.chat_headers, stream=False)

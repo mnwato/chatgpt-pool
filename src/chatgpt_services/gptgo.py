@@ -1,5 +1,4 @@
 
-from retry import retry
 import requests
 import json
 
@@ -100,7 +99,6 @@ class GPTGoChatgpt:
 			raise e
 	
 
-	# @retry(tries=2, delay=5)
 	def chat(self, token):
 		try:
 			res = self.s.get(self.gpt_go.chat_url.format(token), headers=self.gpt_go.chat_headers, stream=True)

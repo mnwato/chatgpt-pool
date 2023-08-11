@@ -1,5 +1,4 @@
 
-from retry import retry
 import openai
 import time
 import sys
@@ -33,7 +32,6 @@ class OfficialOpenai:
 
 
 
-	# @retry(tries=2, delay=5)
 	def make_request(self, prompt):
 		start_time = time.time()
 		tpm_limit = 0
