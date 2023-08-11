@@ -10,17 +10,16 @@ path = pathlib.Path(__file__).parent.parent.parent.parent
 sys.path.append(str(path))
 
 from src.chatgpt_services.openai.utils import check_input_tokens_limit, check_rpm_limit
-from src.utils.env_getter import EnvGetter
 
 
 
 
 class OfficialOpenai:
-	def __init__(self, model_name) -> None:
-		envs = EnvGetter().env_variables
-		openai.api_key = envs["OPENAI_API_KEY"]
-		openai.organization = envs["OPENAI_ORG_KEY"]
-		self.prefered_model = "gpt-3.5-turbo"
+	def __init__(self, configs) -> None:
+		configs = configs["openai"]
+		openai.api_key = configs["OPENAI_API_KEY"]
+		openai.organization = configs["OPENAI_ORG_KEY"]
+		self.prefered_model = configs["OPENAI_Model_Name"]
 
 
 
