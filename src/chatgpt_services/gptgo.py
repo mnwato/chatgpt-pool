@@ -138,5 +138,5 @@ if __name__ == "__main__":
 	obj = GPTGoChatgpt()
 
 	prompt = "what time is it in tehran?"
-	res = obj.make_req(prompt)
+	res = obj.make_request(prompt)
 	print(res)
