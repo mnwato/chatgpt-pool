@@ -104,5 +104,5 @@ if __name__ == "__main__":
 
 	prompt = "what time is it in tehran?"
 	prompt = "Where could i find best samsung mobile phone?"
-	res = obj.make_req(prompt)
+	res = obj.make_request(prompt)
 	print(res)
