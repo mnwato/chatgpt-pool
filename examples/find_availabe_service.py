@@ -11,8 +11,7 @@ from src.pool import ChatGPTPool
 obj = ChatGPTPool()
 
 
-text = "Hi"
-available_service_name = obj.find_first_availabe_service(prompt=text)
+available_service_name = obj.find_first_availabe_service()
 
 
 print(available_service_name)
