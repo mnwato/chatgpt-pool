@@ -16,3 +16,7 @@ class NoAvailableServiceError(Exception):
         return self.error_message
 
 
+class LongPromptError(Exception):
+    def __init__(self, value) -> None:
+        self.value = value
+        super().__init__(f"Prompt length exceeds limit: {value},  must be lower than 2500 character")

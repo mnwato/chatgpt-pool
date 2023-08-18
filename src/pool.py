@@ -12,6 +12,7 @@ sys.path.append(str(path))
 from src.services import InstantiateServices
 from src.utils.exceptions import ServiceNotFoundError
 from src.utils.exceptions import NoAvailableServiceError
+from src.utils.exceptions import LongPromptError
 
 
 
@@ -20,14 +21,14 @@ class ChatGPTPool:
         self.services = InstantiateServices().services
 
 
-    def find_first_availabe_service(self, prompt):
+    def find_first_availabe_service(self):
         """
             Find first available service which respons to prompt
         """
         available_service_name = None
         for k,v in self.services.items():
             try:
-                service_result = v.make_request(prompt)
+                service_result = v.make_request('Hi.')
             except:
                 continue
             if service_result!=None:
@@ -42,6 +43,8 @@ class ChatGPTPool:
         """
             Request to specified service
         """
+        self.check_vilations(prompt, service_name)
+
         service = self.services.get(service_name)
         if service!=None:
             try:
@@ -52,6 +55,12 @@ class ChatGPTPool:
         else:
             raise ServiceNotFoundError(service_name)
 
+
+    def check_vilations(self, prompt, service_name):
+        if service_name=='gpt_go' and len(prompt)>2500:
+            raise LongPromptError(len(prompt))
+        else:
+            return True
 
 
 if __name__ == "__main__":
