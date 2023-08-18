@@ -8,7 +8,7 @@ from src.pool import ChatGPTPool
 
 obj = ChatGPTPool()
 
-text = """Wikipedia[note 3] is a free-content online encyclopedia written and maintained by a community of volunteers, collectively known as Wikipedians, through open collaboration and using a wiki-based editing system called MediaWiki. Wikipedia is the largest and most-read reference work in history,[3][4] and has consistently been one of the 10 most popular websites.[5] Created by Jimmy Wales and Larry Sanger on January 15, 2001, it is hosted by the Wikimedia Foundation, an American nonprofit organization.
+prompt = """Wikipedia[note 3] is a free-content online encyclopedia written and maintained by a community of volunteers, collectively known as Wikipedians, through open collaboration and using a wiki-based editing system called MediaWiki. Wikipedia is the largest and most-read reference work in history,[3][4] and has consistently been one of the 10 most popular websites.[5] Created by Jimmy Wales and Larry Sanger on January 15, 2001, it is hosted by the Wikimedia Foundation, an American nonprofit organization.
 
 Initially available only in English, versions in other languages were quickly developed. Wikipedia's combined editions comprise more than 61 million articles, attracting around 2 billion unique device visits per month and more than 15 million edits per month (about 5.8 edits per second on average) as of July 2023.[6][7]
 
@@ -16,7 +16,7 @@ Wikipedia has been praised for its enablement of the democratization of knowledg
 """
 service_name = "gpt_go"
 
-result = obj.req_to_service(prompt=text, service_name=service_name)
+result = obj.req_to_service(prompt=prompt, service_name=service_name)
 
 
 print(result)
