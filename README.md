@@ -23,6 +23,7 @@
         <th></th>
         <th>Url</th>
         <th>Service name</th>
+        <th>Status</th>
         <th>Supported models</th>
     </tr>
     </thead>
@@ -32,6 +33,7 @@
             <td> <a href="https://chat.openai.com" target="_blank">https://chat.openai.com</a>
                 <br> </td>
             <td>openai</td>
+            <td>✔️</td>
             <td>
                 <details>
                     <summary>Click to expand</summary>
@@ -55,6 +57,7 @@
             <td> <a href="https://gptgo.ai" target="_blank">https://gptgo.ai/?hl=en</a>
                 <br> </td>
             <td>gpt_go</td>
+            <td>✔️</td>
             <td>gpt-3.5-turbo</td>
         </tr>
     </tbody>
@@ -64,6 +67,17 @@
             <td> <a href="https://easygpt.io" target="_blank">https://easygpt.io</a>
                 <br> </td>
             <td>easy_gpt</td>
+            <td>✖️</td>
+            <td>gpt-3.5-turbo</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <td>4</td>
+            <td> <a href="https://p5.v50.ltd" target="_blank">https://p5.v50.ltd</a>
+                <br> </td>
+            <td>p5_v50</td>
+            <td>✔️</td>
             <td>gpt-3.5-turbo</td>
         </tr>
     </tbody>
