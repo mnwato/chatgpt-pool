@@ -5,6 +5,7 @@ import os
 from src.chatgpt_services.openai.official_openai import OfficialOpenai
 from src.chatgpt_services.gptgo import GPTGoChatgpt
 from src.chatgpt_services.easy_gpt import EasyGptChatgpt
+from src.chatgpt_services.p5_v50 import P5V50Chatgpt
 
 
 
@@ -26,5 +27,6 @@ class InstantiateServices:
         self.services = {
             "openai": OfficialOpenai(configs),
             "gpt_go": GPTGoChatgpt(),
-            "easy_gpt": EasyGptChatgpt()
+            "easy_gpt": EasyGptChatgpt(),
+            "p5_v50": P5V50Chatgpt(configs)
             }

@@ -3,5 +3,9 @@
         "OPENAI_API_KEY": "YOUR_OPENAI_API_KEY",
         "OPENAI_ORG_KEY": "YOUR_OPENAI_ORG_KEY",
         "OPENAI_Model_Name": "gpt-3.5-turbo"
+    },
+    "p5_v50": {
+        "temperature": 0.7,
+        "model": "gpt-3.5-turbo"
     }
 }
