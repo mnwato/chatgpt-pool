@@ -78,7 +78,20 @@
                 <br> </td>
             <td>p5_v50</td>
             <td>✔️</td>
-            <td>gpt-3.5-turbo</td>
+            <td>
+                <details>
+                    <summary>Click to expand</summary>
+                    <ul>
+                        <li>gpt-3.5-turbo</li>
+                        <li>gpt-3.5-turbo-0301</li>
+                        <li>gpt-3.5-turbo-0613</li>
+                        <li>gpt-3.5-turbo-16k</li>
+                        <li>gpt-3.5-turbo-16k-0613</li>
+                        <li>gpt-4</li>
+                        <li>gpt-4-0613</li>
+                    </ul>
+                </details>
+            </td>
         </tr>
     </tbody>
 
@@ -87,8 +100,8 @@
 <br/><br/>
 
 ## How to Use:
-1. Edit **model_configs.json** in root path:    
-    Edit openai config as your account API info:
+1. Edit **model_configs.json** in root path, for example:    
+    Set your OpenAI API info if you want to use OpenAI models:
      ```JSON
         "openai": {
             "OPENAI_API_KEY": "YOUR_OPENAI_API_KEY",
